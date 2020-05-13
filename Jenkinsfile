@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo 'cloning repo'
                 git 'https://github.com/rupamkabasi/ec2_provision.git'
+                sh 'chmod -R 777 *'
             }
         }
         stage('Build') {
