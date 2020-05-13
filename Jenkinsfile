@@ -1,5 +1,5 @@
 pipeline {
-    agent { label ''}
+    agent { label 'rhel_build'}
 
     stages {
         stage('scp checkout') {
