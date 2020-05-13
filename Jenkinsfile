@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'provisioning EC2'
-                cd terraform-aws-instance && sh ec2_provision.sh  
+                sh 'cd terraform-aws-instance && ./ec2_provision.sh'
             }
         }
         stage('teardown') {
@@ -20,7 +20,7 @@ pipeline {
             }
             steps {
                 echo 'Tearing down EC2'
-                cd terraform-aws-instance && sh ec2_teardown.sh
+                sh 'cd terraform-aws-instance && ./ec2_teardown.sh'
             }
         }
     }
